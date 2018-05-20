@@ -1,19 +1,19 @@
 /**
  * This class is the view model for the Main view of the application.
  */
-Ext.define('App.view.main.MainViewModel', {
+Ext.define('App.view.main.SessionListViewModel', {
     extend: 'Ext.app.ViewModel',
 
-    alias: 'viewmodel.mainViewModel',
+    alias: 'viewmodel.sessionListViewModel',
 
     stores: {
-        sessions: {
-            type: 'sessionStore'
+        data: {
+            model: 'App.model.SessionModel',
+            autoLoad: true
         }
     },
 
-    data: {
-    }
+    data: []
 
     //TODO - add data, formulas and/or methods to support your view
 });

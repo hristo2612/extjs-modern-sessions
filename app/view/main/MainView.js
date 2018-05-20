@@ -4,53 +4,59 @@
  * added to the Viewport container.
  */
 Ext.define('App.view.main.MainView', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.Container',
     xtype: 'mainView',
 
     requires: [
+        'App.view.details.SessionDetails',
+        'App.view.list.SessionList',
         'Ext.MessageBox',
         'Ext.layout.Fit'
     ],
 
-    controller: 'mainController',
     viewModel: 'mainViewModel',
 
-    defaults: {
-        tab: {
-            iconAlign: 'top'
-        }
+    layout: {
+        type: 'hbox',
+        align: 'stretch'
     },
-
-    tabBarPosition: 'bottom',
-
-    items: [
-        // TODO - Replace the content of this view to suit the needs of your application.
-        {
-            title: 'Home',
-            iconCls: 'x-fa fa-home',
-            layout: 'fit',
-            // The following grid shares a store with the classic version's grid as well!
-            items: [{
-                xtype: 'mainlist'
-            }]
-        },{
-            title: 'Users',
-            iconCls: 'x-fa fa-user',
-            bind: {
-                html: '{loremIpsum}'
+    items: [ {
+        xtype: 'panel',
+        layout: {
+            type: 'vbox',
+        },
+        style: {
+            width: '40%'
+        },
+        items: [
+            {
+                xtype: 'panel',
+                title: 'Sessions Panel',
+                style: {
+                    height: '50%'
+                },
+                items: [
+                    {
+                        xtype: 'sessionList',
+                        height: 500
+                    }
+                ]
+            },
+            {
+                xtype: 'panel',
+                title: 'Speaker Panel',
+                style: {
+                    height: '50%'
+                }
             }
-        },{
-            title: 'Groups',
-            iconCls: 'x-fa fa-users',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Settings',
-            iconCls: 'x-fa fa-cog',
-            bind: {
-                html: '{loremIpsum}'
-            }
+        ]
+    },
+    {
+        xtype: 'sessionDetails',
+        title: 'Details Panel',
+        style: {
+            width: '100%',
+            height: '100%'
         }
-    ]
+    }]
 });
