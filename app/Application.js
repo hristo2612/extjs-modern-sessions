@@ -7,18 +7,4 @@ Ext.define('App.Application', {
     extend: 'Ext.app.Application',
 
     name: 'App',
-
-    models: [
-        //'SessionModel'
-    ],
-
-    stores: [
-        //'SessionStore'
-    ],
-
-    views: [
-        //'form.SessionForm',
-        //'list.SessionList',
-        'main.MainView'
-    ],
 });
