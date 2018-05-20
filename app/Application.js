@@ -8,20 +8,17 @@ Ext.define('App.Application', {
 
     name: 'App',
 
-    quickTips: false,
-    platformConfig: {
-        desktop: {
-            quickTips: true
-        }
-    },
+    models: [
+        //'SessionModel'
+    ],
 
-    onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-            function (choice) {
-                if (choice === 'yes') {
-                    window.location.reload();
-                }
-            }
-        );
-    }
+    stores: [
+        //'SessionStore'
+    ],
+
+    views: [
+        //'form.SessionForm',
+        //'list.SessionList',
+        'main.MainView'
+    ],
 });

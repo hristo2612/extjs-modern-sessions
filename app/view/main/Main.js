@@ -3,17 +3,17 @@
  * "mainView" property. That setting causes an instance of this class to be created and
  * added to the Viewport container.
  */
-Ext.define('App.view.main.Main', {
+Ext.define('App.view.main.MainView', {
     extend: 'Ext.tab.Panel',
-    xtype: 'app-main',
+    xtype: 'mainView',
 
     requires: [
         'Ext.MessageBox',
         'Ext.layout.Fit'
     ],
 
-    controller: 'main',
-    viewModel: 'main',
+    controller: 'mainController',
+    viewModel: 'mainViewModel',
 
     defaults: {
         tab: {
