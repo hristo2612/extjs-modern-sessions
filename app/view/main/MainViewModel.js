@@ -7,13 +7,14 @@ Ext.define('App.view.main.MainViewModel', {
     alias: 'viewmodel.mainViewModel',
 
     stores: {
+        sessionPresenters: {
+            type: 'sessionPresenterStore'
+        },
+        presenters: {
+            type: 'presenterStore'
+        },
         sessions: {
             type: 'sessionStore'
         }
-    },
-
-    data: {
     }
-
-    //TODO - add data, formulas and/or methods to support your view
 });

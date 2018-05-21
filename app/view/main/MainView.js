@@ -37,17 +37,12 @@ Ext.define('App.view.main.MainView', {
                 },
                 items: [
                     {
-                        xtype: 'sessionList',
-                        height: 500
+                        xtype: 'sessionList'
                     }
                 ]
             },
             {
-                xtype: 'panel',
-                title: 'Speaker Panel',
-                style: {
-                    height: '50%'
-                }
+                xtype: 'presenterList'
             }
         ]
     },

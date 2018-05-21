@@ -7,13 +7,10 @@ Ext.define('App.view.main.SessionListViewModel', {
     alias: 'viewmodel.sessionListViewModel',
 
     stores: {
-        data: {
-            model: 'App.model.SessionModel',
-            autoLoad: true
+        records: {
+            type: 'sessionStore'
         }
-    },
-
-    data: []
+    }
 
     //TODO - add data, formulas and/or methods to support your view
 });

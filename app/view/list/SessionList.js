@@ -7,10 +7,14 @@ Ext.define('App.view.list.SessionList', {
         'App.store.SessionStore'
     ],
 
-    store: {
-        type: 'sessionStore'
+    bind: {
+        store: '{sessions}'
     },
-    //viewModel: 'sessionListViewModel',
+
+    selectable: {
+        mode: 'single',
+    },
+
     controller: 'sessionListController',
 
     columns: [{
@@ -44,6 +48,6 @@ Ext.define('App.view.list.SessionList', {
     width: '100%',
 
     listeners: {
-        select: 'onViewSession'
+        select: 'onViewPresenter'
     }
 })

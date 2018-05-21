@@ -18,6 +18,21 @@ Ext.define('App.view.list.SessionListController', {
     },
 
     onViewSession: function(grid, record) {
-        grid.up('mainView').down('#sessionDetails').getViewModel().set('record', record[0]);
+        grid.up('mainView').down('#sessionDetails').getViewModel().set('record', record);
+    },
+
+    onViewPresenter: function(grid, record) {
+        var sessionId = record.get('id');
+        
+        var presenterIds = [];
+
+        var mainViewModel = grid.up('mainView').getViewModel().get('sessions');
+
+        mainViewModel.each(function(rec){
+            if (rec.get('id') === sessionId ) {
+                console.log('FOUND RECORD WITH CURRENT ID', rec);
+            }
+        })
+
     }
 });
