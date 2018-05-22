@@ -4,6 +4,6 @@ Ext.define('App.store.SessionStore', {
     model: 'App.model.SessionModel',
     autoLoad: true,
     sorters: [        
-        { property: 'title' }
+        { property: 'id' }
     ]
 });

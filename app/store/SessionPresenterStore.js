@@ -4,9 +4,9 @@ Ext.define('App.store.SessionPresenterStore', {
     model: 'App.model.SessionPresenterModel',
     storeId: 'SessionPresenters',
     autoLoad: true,
-    filters: [
-        function(item) {
-            return false;
-        }
-    ]
+    // filters: [
+    //     function(item) {
+    //         return false;
+    //     }
+    // ]
 });
