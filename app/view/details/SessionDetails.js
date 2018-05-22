@@ -18,33 +18,20 @@ Ext.define('App.view.details.SessionDetails', {
     width: '70%',
     height: '100%',
 
-    items: [
-        {
-            xtype: 'textfield',
-            label: 'Title',
-            bind: '{record.title}'
-        },
-        {
-            xtype: 'textfield',
-            label: 'Description',
-            bind: '{record.description}'
-        },
-        {
-            xtype: 'checkboxfield',
-            label: 'Approved',
-            bind: '{record.approved}'
-        },
-        {
-            xtype: 'button',
-            text: 'Submit',
-            iconCls: 'x-fa fa-check',
-            handler: 'onFormSubmitted'
-        },
-        {
-            xtype: 'button',
-            text: 'Cancel',
-            iconCls: 'x-fa fa-close',
-            handler: 'onFormCanceled'
+    bind: {
+        data: {
+            title: '{record.title}',
+            description: '{record.description}',
+            presenters: '{presenters}'
         }
+    },
+
+    tpl: [
+        '<h1>{title}</h1>',
+        '<h3>{description}</h3>',
+        '<tpl for="presenters">',
+        '   <h4>Presenter: {data.firstName} {data.lastName}</h4>',
+        '   <img class="presenterPhoto" src="{data.imageUrl}" width="300" height="300"/>',
+        '</tpl>'
     ]
 });
